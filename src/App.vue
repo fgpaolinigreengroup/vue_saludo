@@ -1,8 +1,10 @@
 <template>
   <img class="logo" alt="Lidera logo" src="./assets/Logo_Lidera.webp">
-  <h2>Este es un saludo :)</h2>
-  <Input @evento="saludar"/>
-  <Saludo :message="message" />
+  <h2>Este es un saludo</h2>
+  <div class="wrapper">
+    <Input @clicked="onClickChild"/>
+    <Saludo :message="message" />
+  </div>
 
 </template>
 <script>
@@ -20,9 +22,9 @@ export default {
       }
     },
     methods: {
-      saludar () {
+      onClickChild (name) {
         
-        this.message = 'Hola'+ this.$saludar;
+        this.message = 'Hola '+ name + " :)";
         console.log(this.message)
       }
     }
@@ -41,7 +43,7 @@ export default {
 }
 
 img {
-  max-width: 40%;
+  max-width: 30%;
 }
 
 

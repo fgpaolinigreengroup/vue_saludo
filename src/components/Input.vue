@@ -3,23 +3,24 @@
         <label>¿Cómo te llamas?</label>
         <input type="text" required v-model="nombre">
     </div>
-    <button @click="emitirEvento">Saludo</button>
-    <p>{{ nombre }}</p>
-
+    <button @click="onClickedButton($event)">Saludo</button>
+<!--     <p>{{ nombre }}</p>
+-->
 
 </template>
 
 <script>
     export default {
-        emits: ['nombre'],
+        emits: ['clicked'],
         data() {
             return {
-                nombre: ''
+                nombre: null
             }
         },
         methods: {
-            emitirEvento(){
-                this.$emit(this.nombre)
+            onClickedButton(event){
+                console.log("Este es el nombre: " + this.nombre);
+                this.$emit('clicked', this.nombre)
             }
         }
         
