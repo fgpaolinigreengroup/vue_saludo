@@ -9,3 +9,12 @@
     }
 
 </script>
+
+<style scoped>
+
+h2 {
+
+    background-color: unset;
+}
+
+</style>
